@@ -12,4 +12,3 @@ if __name__ == "__main__":
             print(f"{argc} arguments:")
         for i, arg in enumerate(argv[1:], 1):
             print(f"{i}: {arg}")
-

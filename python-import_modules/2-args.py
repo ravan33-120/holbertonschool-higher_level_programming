@@ -10,6 +10,5 @@ if argc == 1:
 print("1 argument:")
 else:
 print(f"{argc} arguments:")
-for i, arg in enumerate(argv[1:], 1):
-print(f"{i}: {arg}")
-
+for i in range(1, argc + 1):
+print(f"{i}: {argv[i]}")

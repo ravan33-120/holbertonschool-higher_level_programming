@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 This module defines the Student class with JSON serialization and
 deserialization capabilities.

@@ -1,2 +1,2 @@
-#butun database-ler
+--butun database-ler
 SHOW DATABASES;

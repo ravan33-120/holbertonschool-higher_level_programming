@@ -1,13 +1,18 @@
 #!/usr/bin/python3
-from urllib import request
+"""Fetches the URL: https://intranet.hbtn.io/status
+"""
+
+from urllib.request import Request, urlopen
+
 
 if __name__ == "__main__":
-    url = "https://intranet.hbtn.io/status"
+    req = Request('https://intranet.hbtn.io/status')
 
-    with request.urlopen(url) as response:
-        body = response.read()
+    with urlopen(req) as res:
+        content = res.read()
+        utf8_content = content.decode('utf-8')
 
-    print("Body response:")
-    print("    - type: {}".format(type(body)))
-    print("    - content: {}".format(body))
-    print("    - utf8 content: {}".format(body.decode("utf-8")))
+        print('Body response:')
+        print('\t- type: {_type}'.format(_type=type(content)))
+        print('\t- content: {_content}'.format(_content=content))
+        print('\t- utf8 content: {_utf8_c}'.format(_utf8_c=utf8_content))

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Product Display</title>
+</head>
+<body>
+
+    <h1>Product Data</h1>
+
+    {% if error %}
+        <p>{{ error }}</p>
+
+    {% elif products %}
+        <table border="1" cellpadding="5">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Price ($)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for p in products %}
+                    <tr>
+                        <td>{{ p.name if p.name else p['name'] }}</td>
+                        <td>{{ p.category if p.category else p['category'] }}</td>
+                        <td>{{ p.price if p.price else p['price'] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    {% else %}
+        <p>No products available</p>
+    {% endif %}
+
+</body>
+</html>
+
